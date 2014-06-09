@@ -1,5 +1,8 @@
 {
     "name": "twowholeworms/tww-saml",
+    "type": "library",
+    "keywords": ["saml", "simplesamlphp", "onelogin", "zfcuser", "zfc-user", "user", "auth", "authentication"],
+    "homepage": "http://github.com/TwoWholeWorms/TwwSaml",
     "description": "Module integrating OneLogin's SAML library with ZfcUser",
     "license": "BSD-3-Clause",
     "authors": [
@@ -8,7 +11,6 @@
             "email": "ben.nolan@gmail.com"
         }
     ],
-    "minimum-stability": "dev",
     "require": {
         "php": ">=5.3.0",
         "onelogin/php-saml": "master-dev",
