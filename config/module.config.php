@@ -17,7 +17,9 @@ return array(
     ),
     'controllers' => array(
         'invokables' => array(
-            'TwwSaml\SamlAdapter' => 'TwwSaml\ServiceFactory\SamlAdapterFactory',
+            'TwwSaml\SamlAdapter'         => 'TwwSaml\ServiceFactory\SamlAdapterFactory',
+            'TwwSaml\Controller\Acs'      => 'TwwSaml\Controller\AcsController',
+            'TwwSaml\Controller\Metadata' => 'TwwSaml\Controller\MetadataController',
         ),
     ),
 );
