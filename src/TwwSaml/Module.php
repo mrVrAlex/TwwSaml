@@ -9,7 +9,7 @@ class Module
 
     public function onBootstrap(MvcEvent $e)
     {
-        define("TOOLKIT_PATH", __DIR__ . '/../../../../vendor/onelogin/php-saml/');
+        define("TOOLKIT_PATH", __DIR__ . '/../../../../../vendor/onelogin/php-saml/');
         require_once(TOOLKIT_PATH . '_toolkit_loader.php');
     }
 
