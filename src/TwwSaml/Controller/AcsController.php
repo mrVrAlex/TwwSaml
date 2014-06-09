@@ -9,6 +9,7 @@ class AcsController extends AbstractActionController
 
     public function indexAction()
     {
+        $serviceLocator = $this->getServiceManager();
         $config = $serviceLocator->get('Config');
         $auth = new \OneLogin_Saml2_Auth($config['tww-saml']['auth']);
         $auth->processResponse();
