@@ -1,8 +1,16 @@
 <?php
-namespace TwwSimpleSaml;
+
+namespace TwwSaml;
 
 class Module
 {
+
+    public function onBootstrap(MvcEvent $e)
+    {
+        define("TOOLKIT_PATH", __DIR__ . '/../../vendor/onelogin/php-saml/');
+        require_once(TOOLKIT_PATH . '_toolkit_loader.php');
+    }
+
     public function getConfig()
     {
         return include __DIR__ . '/config/module.config.php';
@@ -11,6 +19,9 @@ class Module
     public function getAutoloaderConfig()
     {
         return array(
+            'Zend\Loader\ClassMapAutoloader' => array(
+                    __DIR__ . '/autoload_classmap.php'
+            ),
             'Zend\Loader\StandardAutoloader' => array(
                 'namespaces' => array(
                     __NAMESPACE__ => __DIR__ . '/src/' . __NAMESPACE__,
@@ -18,4 +29,14 @@ class Module
             ),
         );
     }
+
+    public function getServiceConfig()
+    {
+        return array(
+            'factories' => array(
+                'TwwSaml\AuthUri'         => 'TwwSaml\Factory\AuthUriFactory',
+            ),
+        );
+    }
+
 }

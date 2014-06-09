@@ -1,6 +1,6 @@
 {
-    "name": "twowholeworms/tww-simple-saml",
-    "description": "Module adding SimpleSAMLphp integration to ZF2",
+    "name": "twowholeworms/tww-saml",
+    "description": "Module integrating OneLogin's SAML library with ZfcUser",
     "license": "BSD-3-Clause",
     "authors": [
         {
@@ -9,19 +9,14 @@
         }
     ],
     "minimum-stability": "dev",
-    "repositories": [
-        {
-            "type": "composer",
-            "url": "https://raw.github.com/cpliakas/simplesamlphp-composer/master"
-        }
-    ],
     "require": {
         "php": ">=5.3.0",
-        "simplesamlphp/simplesamlphp": "1.10.*"
+        "onelogin/php-saml": "master-dev",
+        "zf-commons/zfc-user": "dev-master"
     },
     "autoload": {
         "psr-0": {
-            "TwwSimpleSaml": "src/"
+            "TwwSaml": "src/"
         }
     }
 }
