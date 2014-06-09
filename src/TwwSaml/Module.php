@@ -2,6 +2,8 @@
 
 namespace TwwSaml;
 
+use Zend\Mvc\MvcEvent;
+
 class Module
 {
 
