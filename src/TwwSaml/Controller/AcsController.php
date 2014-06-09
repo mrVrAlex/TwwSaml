@@ -9,7 +9,7 @@ class AcsController extends AbstractActionController
 
     public function indexAction()
     {
-        $auth = new OneLogin_Saml2_Auth();
+        $auth = new \OneLogin_Saml2_Auth();
         $auth->processResponse();
 
         $errors = $auth->getErrors();
@@ -23,7 +23,7 @@ class AcsController extends AbstractActionController
         }
 
         $_SESSION['samlUserdata'] = $auth->getAttributes();
-        if (isset($_POST['RelayState']) && OneLogin_Saml2_Utils::getSelfURL() != $_POST['RelayState']) {
+        if (isset($_POST['RelayState']) && \OneLogin_Saml2_Utils::getSelfURL() != $_POST['RelayState']) {
             $this->redirect()->toUrl($_POST['RelayState']);
         } else {
             $this->redirect()->toRoute('home');

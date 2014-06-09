@@ -17,9 +17,9 @@ class MetadataController extends AbstractActionController
                 header('Content-Type: text/xml');
                 echo $metadata;
             } else {
-                throw new OneLogin_Saml2_Error(
+                throw new \OneLogin_Saml2_Error(
                     'Invalid SP metadata: '.implode(', ', $errors),
-                    OneLogin_Saml2_Error::METADATA_SP_INVALID
+                    \OneLogin_Saml2_Error::METADATA_SP_INVALID
                 );
             }
         } catch (Exception $e) {
