@@ -36,7 +36,8 @@ class Module
     {
         return array(
             'factories' => array(
-                // 'TwwSaml\AuthUri'         => 'TwwSaml\Factory\AuthUriFactory',
+                'TwwSaml\\Adapter\\Saml'         => 'TwwSaml\\Factory\\SamlAdapterFactory',
+                'TwwSaml\\Config\\Saml'          => 'TwwSaml\\Factory\\SamlConfigFactory',
             ),
         );
     }
