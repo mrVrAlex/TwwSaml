@@ -2,9 +2,10 @@
 
 namespace TwwSaml;
 
+use Zend\ModuleManager\Feature\ServiceProviderInterface;
 use Zend\Mvc\MvcEvent;
 
-class Module
+class Module implements ServiceProviderInterface
 {
 
     public function onBootstrap(MvcEvent $e)
@@ -36,8 +37,8 @@ class Module
     {
         return array(
             'factories' => array(
-                'TwwSaml\\SamlAdapter' => 'TwwSaml\\Factory\\SamlAdapterFactory',
-                'TwwSaml\\SamlConfig'  => 'TwwSaml\\Factory\\SamlConfigFactory',
+                'TwwSaml\\SamlAdapter' => 'TwwSaml\\ServiceFactory\\SamlAdapterFactory',
+                'TwwSaml\\SamlConfig'  => 'TwwSaml\\ServiceFactory\\SamlConfigFactory',
             ),
         );
     }
