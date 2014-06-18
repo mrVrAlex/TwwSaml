@@ -36,25 +36,10 @@ class Module
     {
         return array(
             'factories' => array(
-                'TwwSaml\\Adapter\\Saml'         => 'TwwSaml\\Factory\\SamlAdapterFactory',
-                'TwwSaml\\Config\\Saml'          => 'TwwSaml\\Factory\\SamlConfigFactory',
+                'TwwSaml\\SamlAdapter' => 'TwwSaml\\Factory\\SamlAdapterFactory',
+                'TwwSaml\\SamlConfig'  => 'TwwSaml\\Factory\\SamlConfigFactory',
             ),
         );
-    }
-
-    public function getConfiguration()
-    {
-        return $this->getConfig();
-    }
-
-    public function getAutoloaderConfiguration()
-    {
-        return $this->getAutoloaderConfig();
-    }
-
-    public function getServiceConfiguration()
-    {
-        return $this->getServiceConfig();
     }
 
 }

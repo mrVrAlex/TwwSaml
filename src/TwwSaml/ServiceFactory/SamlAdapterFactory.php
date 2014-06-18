@@ -20,8 +20,8 @@ class SamlAdapterFactory implements FactoryInterface
      */
     public function createService(ServiceLocatorInterface $serviceLocator)
     {
-        $config = $serviceLocator->get('TwwSaml\\Config\\Saml');
-        return new SamlAdapter($config);
+        $config = $serviceLocator->get('TwwSaml\\SamlConfig');
+        return new SamlAdapter($config['settings']);
     }
 
 }
