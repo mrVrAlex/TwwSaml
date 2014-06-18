@@ -39,7 +39,7 @@ class Saml
      */
     public function authenticate()
     {
-        $this->auth = new \OneLogin_Saml2_Auth($this->config['auth']);
+        $this->auth = new \OneLogin_Saml2_Auth($this->config['settings']);
         $this->auth->login();
 
         return $auth->isAuthenticated();

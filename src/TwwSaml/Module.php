@@ -21,26 +21,26 @@ class Module implements ServiceProviderInterface
 
     public function getAutoloaderConfig()
     {
-        return array(
-            'Zend\Loader\ClassMapAutoloader' => array(
+        return [
+            'Zend\Loader\ClassMapAutoloader' => [
                     __DIR__ . '/autoload_classmap.php'
-            ),
-            'Zend\Loader\StandardAutoloader' => array(
-                'namespaces' => array(
+            ],
+            'Zend\Loader\StandardAutoloader' => [
+                'namespaces' => [
                     __NAMESPACE__ => __DIR__ . '/../../src/' . __NAMESPACE__,
-                ),
-            ),
-        );
+                ],
+            ],
+        ];
     }
 
     public function getServiceConfig()
     {
-        return array(
-            'factories' => array(
+        return [
+            'factories' => [
                 'TwwSaml\\SamlAdapter' => 'TwwSaml\\ServiceFactory\\SamlAdapterFactory',
                 'TwwSaml\\SamlConfig'  => 'TwwSaml\\ServiceFactory\\SamlConfigFactory',
-            ),
-        );
+            ],
+        ];
     }
 
 }
