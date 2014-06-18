@@ -26,9 +26,9 @@ class AcsController extends AbstractActionController
 
         $_SESSION['samlUserdata'] = $auth->getAttributes();
         if (isset($_POST['RelayState']) && \OneLogin_Saml2_Utils::getSelfURL() != $_POST['RelayState']) {
-            $this->redirect()->toUrl($_POST['RelayState']);
+            return $this->redirect()->toUrl($_POST['RelayState']);
         } else {
-            $this->redirect()->toRoute('home');
+            return $this->redirect()->toRoute('home');
         }
     }
 
