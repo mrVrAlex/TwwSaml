@@ -22,7 +22,7 @@ class MetadataController extends AbstractActionController
                     \OneLogin_Saml2_Error::METADATA_SP_INVALID
                 );
             }
-        } catch (Exception $e) {
+        } catch (\Exception $e) {
             echo $e->getMessage();
         }
     }

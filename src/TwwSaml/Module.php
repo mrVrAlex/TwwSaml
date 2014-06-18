@@ -42,4 +42,19 @@ class Module
         );
     }
 
+    public function getConfiguration()
+    {
+        return $this->getConfig();
+    }
+
+    public function getAutoloaderConfiguration()
+    {
+        return $this->getAutoloaderConfig();
+    }
+
+    public function getServiceConfiguration()
+    {
+        return $this->getServiceConfig();
+    }
+
 }
