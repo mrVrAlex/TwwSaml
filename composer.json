@@ -13,7 +13,7 @@
     ],
     "require": {
         "php": ">=5.3.0",
-        "onelogin/php-saml": "dev-master",
+        "onelogin/php-saml": "2.*",
         "zf-commons/zfc-user": "dev-master"
     },
     "autoload": {
